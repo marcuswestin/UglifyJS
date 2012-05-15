@@ -44,10 +44,13 @@ function getTester(script) {
 
 var tests = {};
 
+var skipTests = 'array2.js,array3.js,array4.js,ifreturn.js,issue349.js,issue368.js,issue372.js,issue50.js,issue68.js,mangle.js'.split(',')
+
 var scripts = fs.readdirSync(testDir);
 for (var i in scripts) {
 	var script = scripts[i];
 	if (/\.js$/.test(script)) {
+		if (skipTests.indexOf(script) != -1) { continue }
 		tests[script] = getTester(script);
 	}
 }
