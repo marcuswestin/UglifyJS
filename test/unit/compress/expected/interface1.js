@@ -1,0 +1,1 @@
+function qwe(cat){cat}var foo=function(bar){bar},zxc=""
